@@ -3,6 +3,4 @@
 HTML Website von Lukas!
 
 
-Vercel: https://spengergasse-luke-2niu.vercel.app
-
-Ich habe es bisher nach langem versuch nicht hinbekommen die Webistite gut von vercel zu hosten, jedoch ist trotsdem hier mein vercel Projekt Link.
+Mein Website Netliy Link: https://merry-hotteok-4460cd.netlify.app
