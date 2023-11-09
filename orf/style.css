@@ -1,21 +1,24 @@
 body{
-    background-color: #5286c1;
-  margin: 0px;
+    background-color: #5286C1;^
+    margin
 }
 
-.navbar {
-    background-color: cornflowerblue;
+.navbar{
+    background-color: #4371A3;
     padding: 5px 15px;
-    margin-left: 50px;
-    margin-right: 50px;
-    padding: 15px 10px;
-  }
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0px 10px;
+}
 .grid-container {
     display: grid;
     margin-left: 100px;  
-    margin-right: 430px;
-    grid-template-columns: repeat(5, auto);
-    grid-template-rows: repeat(2, auto);
+    margin-right: 95%;
+    grid-template-columns: 1fr auto auto auto 1fr;
+    grid-template-rows: 150px 150px;
     grid-template-areas: 
     "israel flieger flieger man scheich"
     "israel kfz tisch tisch scheich ";
@@ -37,4 +40,59 @@ body{
 }
 .tisch{
     grid-area: tisch;
+}
+.emblem1{
+    margin-left: 220px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.emblem2{
+    margin-left: 220px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.weather{
+    font-size: 23px;
+    color: white;
+}
+.Bregenz{
+    font-size: 23px;
+    color: white;
+    position: relative;
+    right: -14%;
+}
+.dropdown-p {
+    display: none;
+    color: white;
+    font-style: arial;
+}
+.dropdown-p:target {
+    display: block;
+    background-color: white;
+    color: black;
+    padding: 25px;
+    font-size: 25px;
+    font-style: arial;
+    margin-left: 150px;
+}
+.drop-title{
+    color: white;
+    font-size: 25px;
+    padding-top: 25px;
+    margin-left: 150px;
+}
+a:visited{
+    color: white;
+}
+a:link{
+    color: white;
+}
+.text{
+    background-color: #5A8BC4;
+    margin-left: 100px;
+    margin-right: 833px;
+}
+h2{
+    position: relative;
+    bottom: -76px;
 }
