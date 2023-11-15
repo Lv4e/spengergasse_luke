@@ -1,10 +1,10 @@
 body{
-    background-color: #5286C1;^
+    background-color: #5286C1;
     margin
 }
 
 .navbar{
-    background-color: #4371A3;
+    background-color: #4371a3;
     padding: 5px 15px;
 }
 
@@ -95,4 +95,26 @@ a:link{
 h2{
     position: relative;
     bottom: -76px;
+}
+
+.footer1 {
+    column-gap: initial;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    min-height: 55px;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding: 6px 10px;
+    padding-left: 0;
+    white-space: nowrap;
+    margin: 0 0 0 50px;
+    list-style: none;
+    padding-left: 10px;
+    min-width: 36.875em;
+}
+
+main {
+    display: block;
+    background-color: #5A8BC4;
 }
