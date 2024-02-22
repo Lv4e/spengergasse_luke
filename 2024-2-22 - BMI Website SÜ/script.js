@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("circleContainer:", circleContainer);
         var mybody = document.getElementById("mybody");
 
+        var personstring = person.toString();
 
         if (usergroesseM > '3') {
             alert('Es scheint das du die Größe falsch angegeben hast, gebe Sie in meter an. ZB 1.80')
