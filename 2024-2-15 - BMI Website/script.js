@@ -1,3 +1,4 @@
+//credits Lukas K
 class Person {
     constructor(name, gender, groesseM, gewichtKG) {
         if (gender !== 'm' && gender !== 'f') {
@@ -60,6 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("circleContainer:", circleContainer);
         var mybody = document.getElementById("mybody");
 
+
+        if (usergroesseM > '3') {
+            alert('Es scheint das du die Größe falsch angegeben hast, gebe Sie in meter an. ZB 1.80')
+        }
+
         if (username == 'snake' && usergender == 'snake' && usergroesseM == 'snake' && usergewichtKG == 'snake') {
             window.location.href = "snake.html";
         }
@@ -86,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Normalgewicht not sent");
         }
 
-//visibility: hidden;
+
 
         document.getElementById('startingcomment').innerHTML = "Hey " + username + ", das sind deine Werte";
         document.getElementById('comment').innerHTML = "Du bist:";
@@ -95,3 +101,5 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('commentwert').innerHTML = commentwert;
     });
 });
+
+//credits Lukas K.
