@@ -1,5 +1,5 @@
-import { faker } from '@faker-js/faker';
 const faker = require('faker');
+import faker from 'faker';
 
 function generateData() {
     const email = faker.internet.email();
