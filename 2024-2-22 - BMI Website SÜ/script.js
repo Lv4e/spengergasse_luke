@@ -93,6 +93,11 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Normalgewicht not sent");
         }
 
+        for (i = 2; i < 5; i++) {
+            console.log("i is: ");
+            $nig = '${sdsd}' 
+            console.log($nig);
+        }
 
 
         document.getElementById('startingcomment').innerHTML = "Hey " + username + ", das sind deine Werte";
