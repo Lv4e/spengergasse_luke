@@ -7,7 +7,7 @@ rl.question('Wie viel geild gibst du ihm?  \n', (geldGegeben) => {rl.close();});
 
 
 
-class Kassa {
+class Kassa {   //Kassa = Kasse
     #geldlade;
     #gescannteArtikel
     constructor(geldlade, geldGegeben) {
@@ -16,21 +16,21 @@ class Kassa {
         this.geldGegeben = geldGegeben;
     }
     scannen(artikel) {
-        this.#gescannteArtikel.push(artikel)
+        this.#gescannteArtikel.push(artikel) //Artikel wird in Array gepusht
     }
      get offenerBetrag() {
         let betrag = 0;
         this.#gescannteArtikel.forEach(a => betrag += a.preis)
-        return betrag;
+        return betrag;      //returened den Preis der Artikel arrays addiert
     }
     
     rückgeld(){
-            return this.geldGegeben - this.offenerBetrag;
+            return this.geldGegeben - this.offenerBetrag; //selbsterklärend ab hier
         }
     
     get Kassenstand(){
         let t = this.#geldlade + this.offenerBetrag;
-        return t.toString();
+        return t.toString();    
     }
 
      get returngescannteArtikel() {
