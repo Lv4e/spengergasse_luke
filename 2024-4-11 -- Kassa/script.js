@@ -1,9 +1,9 @@
+const { error } = require('console');
+
 const rl = require('readline').createInterface({
     input : process.stdin,
     output : process.stdout
 });
-
-rl.question('Wie viel geild gibst du ihm?  \n', (geldGegeben) => {rl.close();});        //nicht fertig spiele mich erst damit rum rest des codes funktioniert
 
 
 
@@ -25,6 +25,9 @@ class Kassa {   //Kassa = Kasse
     }
     
     rückgeld(){
+        if (this.geldGegeben < this.offenerBetrag){
+            throw new Error('Zu wenig Geld gegeben')
+        } 
             return this.geldGegeben - this.offenerBetrag; //selbsterklärend ab hier
         }
     
@@ -38,25 +41,56 @@ class Kassa {   //Kassa = Kasse
     }
 }
 
-
-
 class Produkt {
     constructor(name, preis,) {
         this.preis = preis;
         this.name = name;
+       
 
     }
 }
 
-const x = new Produkt('Tomate', 5);
-const y = new Produkt('Brot', 2.49)
-const cola = new Produkt('Cola', 1.99)
+
+//produkte
+const Tomate = new Produkt('Tomate', 5);
+const Brot = new Produkt('Brot', 2.49)
+const Cola = new Produkt('Cola', 1.99)
 const kassa = new Kassa(100, 50)
-kassa.scannen(x);
-kassa.scannen(y);
-kassa.scannen(y);
-kassa.scannen(cola);
-kassa.scannen(cola);
-console.log(`Offen sind: ${kassa.offenerBetrag}`)
-console.log(`Sie haben gezahlt: ${kassa.geldGegeben}, Rückgeld: ${kassa.rückgeld()}`)
-console.log('Der Aktuelle Kassenstand ist: ' + kassa.Kassenstand + '€')
+
+let artikelListe = [Tomate, Brot, Cola];
+
+//readline
+
+
+
+
+const userKassa = new Kassa(100, 0);
+
+rl.question('Was möchtest du kaufen? \n', (artikelInput) => {
+    const foundArtikel = artikelListe.find(a => {
+        if (a.name == artikelInput) {
+            return a;
+        } 
+    })
+    if (foundArtikel == undefined) {
+        throw new Error('Artikel nicht gefunden')
+    } else {
+        userKassa.scannen(foundArtikel)
+    }
+    console.log(`Du hast ${foundArtikel.name} gescannt`)
+   
+
+
+
+rl.question('Wie viel geld gibst du ihm?  \n', (geldGegebenInput) => {
+    userKassa.geldGegeben = parseFloat(geldGegebenInput);
+    console.log(`Du hast ${userKassa.geldGegebenKassa}€ gegeben`)
+    console.log('Dein Rückgeld beträgt: ' + userKassa.rückgeld() + '€');
+    rl.close();});                          //viel zu lange dafür gebracuht, aber es funktioniert
+
+})
+//readline
+
+
+
+
