@@ -37,7 +37,11 @@ class Kassa {   //Kassa = Kasse
     }
 
      get returngescannteArtikel() {
-        return this.#gescannteArtikel;
+        const gescannterArtikel = this.#gescannteArtikel.map(artikel => {
+            return artikel.name;
+        
+        })
+        return gescannterArtikel;
     }
 }
 
@@ -66,29 +70,41 @@ let artikelListe = [Tomate, Brot, Cola];
 
 const userKassa = new Kassa(100, 0);
 
-rl.question('Was möchtest du kaufen? \n', (artikelInput) => {
-    const foundArtikel = artikelListe.find(a => {
-        if (a.name == artikelInput) {
-            return a;
-        } 
-    })
-    if (foundArtikel == undefined) {
-        throw new Error('Artikel nicht gefunden')
-    } else {
-        userKassa.scannen(foundArtikel)
-    }
-    console.log(`Du hast ${foundArtikel.name} gescannt`)
-   
 
-
-
-rl.question('Wie viel geld gibst du ihm?  \n', (geldGegebenInput) => {
+  function einkaufen() {
+        rl.question('Was möchtest du kaufen? "done" zum beenden \n', (artikelInput) => {
+            if (artikelInput == "done"){
+                endoutput()
+                return;
+            }  else {
+                const foundArtikel = artikelListe.find(a => {
+                    if (a.name == artikelInput) {
+                        return a;
+                    } 
+                })
+                if (foundArtikel == undefined) {
+                    throw new Error('Artikel nicht gefunden')
+                } else {
+                    userKassa.scannen(foundArtikel)
+                }
+                console.log(`Du hast ${foundArtikel.name} gescannt`)
+                einkaufen();
+            }})};
+            einkaufen();
+       
+function endoutput(){
+    console.log('Du musst noch ' + userKassa.offenerBetrag + '€ zahlen');
+    rl.question('Wie viel geld gibst du ihm?  \n', (geldGegebenInput) => {
     userKassa.geldGegeben = parseFloat(geldGegebenInput);
     console.log(`Du hast ${userKassa.geldGegebenKassa}€ gegeben`)
-    console.log('Dein Rückgeld beträgt: ' + userKassa.rückgeld() + '€');
+    console.log('Dein Rückgeld beträgt: ' + userKassa.rückgeld().toFixed(2) + '€');
+    console.log('Dein Kassenstand beträgt: ' + userKassa.Kassenstand + '€');
+    console.log('Du hast folgende Artikel gekauft:' + userKassa.returngescannteArtikel )
     rl.close();});                          //viel zu lange dafür gebracuht, aber es funktioniert
 
-})
+}
+    
+
 //readline
 
 
