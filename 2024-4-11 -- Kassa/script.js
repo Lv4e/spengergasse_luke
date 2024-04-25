@@ -28,8 +28,11 @@ class Kassa {   //Kassa = Kasse
         if (this.geldGegeben < this.offenerBetrag){
             throw new Error('Zu wenig Geld gegeben')
         } 
+        if (this.geldGegeben <= 0){
+            throw new Error('negatives Geld geht nicht')
+        } 
             return this.geldGegeben - this.offenerBetrag; //selbsterklärend ab hier
-        }
+    }
     
     get Kassenstand(){
         let t = this.#geldlade + this.offenerBetrag;
@@ -84,11 +87,18 @@ const userKassa = new Kassa(100, 0);
                 })
                 if (foundArtikel == undefined) {
                     throw new Error('Artikel nicht gefunden')
-                } else {
-                    userKassa.scannen(foundArtikel)
+                } 
+                    rl.question('Wie viel möchtest du kaufen? \n', (userAnzahl) => {
+                        for (let i = 0; i < userAnzahl; i++) {
+                            userKassa.scannen(foundArtikel)
                 }
-                console.log(`Du hast ${foundArtikel.name} gescannt`)
+                console.log('Du hast ' + userAnzahl + ' ' + foundArtikel.name + ' gekauft')
                 einkaufen();
+
+            })
+                
+                
+                
             }})};
             einkaufen();
        
