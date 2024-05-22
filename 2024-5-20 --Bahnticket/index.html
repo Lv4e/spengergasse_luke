@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Bahnt ticket automat</h1>
+    <div id="mainBody">
+        
+        <label for="geldIN">Wie viel willst du einzahlen?</label>
+        <input id="geldIN" type="text">
+        <button id="geldGeben">Einzahlen</button>
+        
+        <p>Kontostand lautet: <span id="geldStand">0</span></p>
+
+        <label for="wohin">Wohin willst du fahren?</label>
+
+        <select id="wohin">
+            <option value="Wien">Wien</option>
+            <option value="SalzB">Salzburg</option>
+            <option value="Türkei">Türkei</option>
+            <option value="Stlel">St. Pölten</option>
+        </select>
+        <p></p>
+        <label for="personen">Wie viele Personen?</label>
+        <input id="personen" type="text">
+
+        <p>Dein Preis lautet:</p>
+        <p id="preis"></p>
+        <button id="kaufen">Kaufen</button>
+        
+    </div>
+    <script src="script.js">
+
+    </script>
+</body>
+</html>

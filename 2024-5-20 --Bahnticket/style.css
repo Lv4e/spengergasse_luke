@@ -1,0 +1,46 @@
+body {
+    background-color: #0062ff;
+    font-family: Arial, sans-serif;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    background-image: url("9k.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+  
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+label {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    font-size: 20px;
+    color: white;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: thistle;
+  }

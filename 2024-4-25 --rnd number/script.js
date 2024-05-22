@@ -26,6 +26,6 @@ else if (useranwser < i){
 
     
 }
-console.log(i.toFixed(0))
+
 
 nummer();
